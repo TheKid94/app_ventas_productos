@@ -1,3 +1,4 @@
+import 'package:app_ventas/src/pages/catalogo_page.dart';
 import 'package:app_ventas/src/pages/inicio_page.dart';
 import 'package:app_ventas/src/pages/soporte_page.dart';
 import 'package:app_ventas/src/widgets/menu_widget.dart';
@@ -53,6 +54,7 @@ class _HomePageState extends State<HomePage> {
 
     switch( paginaActual ){
       case 0: return InicioPage();
+      case 1: return CatalogoPage();
       case 2: return SoportePage();
       default:
         return InicioPage();
