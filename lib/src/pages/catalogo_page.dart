@@ -3,26 +3,7 @@ import 'package:flutter/material.dart';
 class CatalogoPage extends StatelessWidget {
  @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {},
-          color: Colors.black,
-        ),
-        title: Text('Productos', style: TextStyle(color: Colors.black)),
-        centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-          icon: Icon(Icons.search),
-          onPressed: () {},
-          color: Colors.grey,
-        ),
-        ],
-      ),
-      body: ListView(
+    return  ListView(
         children: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,14 +37,14 @@ class CatalogoPage extends StatelessWidget {
                                 children: <Widget>[
                                   Text('PS7',
                                    style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontFamily: 'Quicksand',
                                     fontSize: 30.0,
                                     fontWeight: FontWeight.bold),
                                   ),
                                   Text('\$8800',
                                    style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontFamily: 'Quicksand',
                                     fontSize: 20.0,
                                     ),
@@ -189,8 +170,7 @@ class CatalogoPage extends StatelessWidget {
             ],
           )
         ],
-      )
-    );
+      );
   }
 
   Widget  _buildProductoCard(
