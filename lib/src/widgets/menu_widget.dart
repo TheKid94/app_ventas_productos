@@ -47,12 +47,12 @@ class MenuWidget extends StatelessWidget {
           ),
           ListTile(
             leading: Icon( Icons.history, color: Colors.blue ),
-            title: Text('Historial de pedidos'),
+            title: Text('Historial de compras'),
             trailing: Icon(Icons.arrow_right),
           ),
           ListTile(
-            leading: Icon( Icons.location_on_rounded, color: Colors.blue ),
-            title: Text('Mis direcciones'),
+            leading: Icon( Icons.favorite, color: Colors.blue ),
+            title: Text('Mis favoritos'),
             trailing: Icon(Icons.arrow_right),
           ),
           Padding(padding: EdgeInsets.only(

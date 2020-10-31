@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag),
-            label: 'Descuento'
+            label: 'Catalogo'
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.build_circle_outlined),

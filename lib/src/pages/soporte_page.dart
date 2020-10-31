@@ -5,6 +5,7 @@ class SoportePage extends StatelessWidget {
  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
      /* appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
@@ -18,8 +19,7 @@ class SoportePage extends StatelessWidget {
       */
       body: Padding(
         padding: EdgeInsets.all(14.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             SizedBox(
               height: 1.0,
