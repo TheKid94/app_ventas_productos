@@ -1,168 +1,308 @@
 import 'package:flutter/material.dart'; 
 
 class CatalogoPage extends StatelessWidget {
-  @override
+ @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.all(20),
-      children: [
-        Column(
-          children: [
-            ListTile(
-              title: Text("Productos",style: TextStyle(fontSize: 25)),
-            ),
-            Padding(padding: EdgeInsets.only(top: 20)),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(2.0,10.0)
-                  )
-                ]
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Container(
-                  // clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    children: <Widget>[
-
-                      Image(
-                        image: NetworkImage('https://http2.mlstatic.com/bicicleta-montanera-aro-26-doble-suspension-leken-D_NQ_NP_809015-MPE40271837172_122019-F.jpg'),
+    return new Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {},
+          color: Colors.black,
+        ),
+        title: Text('Productos', style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {},
+          color: Colors.grey,
+        ),
+        ],
+      ),
+      body: ListView(
+        children: <Widget>[
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(10.0),
+                height: 250.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Stack(
+                          children: <Widget>[
+                            Container(
+                              height: 230.0,
+                              width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width/3,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5.0),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/ps1.jpg'),
+                                  fit: BoxFit.cover
+                                )
+                              ),
+                            ),
+                            Positioned(
+                              left: 15.0,
+                              top:130.0,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text('PS7',
+                                   style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 30.0,
+                                    fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('\$8800',
+                                   style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 20.0,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    SizedBox(width: 5.0),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Material(
+                          borderRadius: BorderRadius.circular(7.0),
+                          elevation: 2.0,
+                          child: Container(
+                            height: 60.0,
+                            width: 60.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(7.0)
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Icon(Icons.favorite, color: Colors.red),
+                                Text(
+                                  '368',
+                                    style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Material(
+                        borderRadius: BorderRadius.circular(7.0),
+                        elevation: 2.0,
+                        child: Container(
+                          height: 60.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7.0),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.chat_bubble,
+                                  color: Colors.grey.withOpacity(0.5)),
+                              Text(
+                                '76',
+                                style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
                       ),
-                    ],
-                  ),
+                      Material(
+                        borderRadius: BorderRadius.circular(7.0),
+                        elevation: 2.0,
+                        child: Container(
+                          height: 60.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7.0),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.arrow_forward, color: Colors.grey),
+                              Text(
+                                '18',
+                                style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      ],
+                    )
+                  ],
                 ),
               ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 30)),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(2.0,10.0)
-                  )
-                ]
+              SizedBox(height: 10.0),
+              Padding(
+              padding: const EdgeInsets.only(left: 17.0),
+              child: Text('Destacados',
+                style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Container(
-                  // clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    children: <Widget>[
+            ),
+            SizedBox(height: 15.0),
+            GridView.count(
+              crossAxisCount: 2,
+              primary: false,
+              crossAxisSpacing: 10.0,
+              childAspectRatio: 0.85,
+              mainAxisSpacing: 10.0,
+              shrinkWrap: true,
+              children: <Widget>[
+                _buildProductoCard('PS7', 'Sonny', 'assets/ps1.jpg', 64, 22, 1),
+                _buildProductoCard('Bicicleta', 'Scott', 'assets/bicicleta.jpg', 64, 22, 2),
+                _buildProductoCard('Laptop', 'Sony', 'assets/laptop.jpg', 64, 22, 3),
+                _buildProductoCard('Zapatillas 123', 'Adidas', 'assets/zapatillaA.jpg', 64, 22, 4),
+                _buildProductoCard('USB', 'SamDisk', 'assets/usbSam.jpg', 64, 22, 5),
+                _buildProductoCard('TV', 'Samsung', 'assets/tvSam.jpg', 64, 22, 6),
+              ],
+            ),
+            SizedBox(height: 10.0)
+            ],
+          )
+        ],
+      )
+    );
+  }
 
-                      Image(
-                        image: NetworkImage('https://http2.mlstatic.com/laptop-hp-13-an0012la-i5-8va-133-8gb-256ssd-iluminado-lhu-D_NQ_NP_631560-MPE32067269088_092019-F.jpg'),
-                      ),
-                    ],
+  Widget  _buildProductoCard(
+    String name, String origin, String cardImage, int likes, int commentCount, int cardIndex
+  ) {
+    return Padding(
+      padding: cardIndex.isEven? EdgeInsets.only(right: 15.0): EdgeInsets.only(left: 15.0),
+      child: Container(
+        height: 400.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          border: Border.all(
+            color: Colors.grey.withOpacity(0.2),
+            style: BorderStyle.solid,
+            width: 1.0
+          )
+        ),
+        child: Stack(
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  height: 125.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10.0),
+                      topRight: Radius.circular(10.0)
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage(cardImage),
+                      fit: BoxFit.cover
+                    )
                   ),
                 ),
-              ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 30)),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(2.0,10.0)
-                  )
-                ]
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Container(
-                  // clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    children: <Widget>[
-
-                      Image(
-                        image: NetworkImage('https://cdn.pocket-lint.com/r/s/1200x630/assets/images/143354-games-feature-sony-playstation-5-release-date-rumours-and-everything-you-need-to-know-about-ps5-image1-cvz3adase9.jpg'),
-                      ),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0,top: 5.0),
+                  child: Text(
+                    name,
+                    style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 15.0,
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 30)),
-            ListTile(
-              title: Text("Marcas",style: TextStyle(fontSize: 25)),
-            ),
-            Padding(padding: EdgeInsets.only(top: 20)),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(2.0,10.0)
-                  )
-                ]
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Container(
-                  // clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    children: <Widget>[
-
-                      Image(
-                        image: NetworkImage('https://1000marcas.net/wp-content/uploads/2020/01/Sony-simbolo.jpg'),
-                      ),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0),
+                  child: Text(
+                    origin,
+                    style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 12.0,
+                      color: Colors.grey
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 20)),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10.0,
-                    spreadRadius: 2.0,
-                    offset: Offset(2.0,10.0)
-                  )
-                ]
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
-                child: Container(
-                  // clipBehavior: Clip.antiAlias,
-                  child: Column(
+                SizedBox(height: 3.0),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0,top: 10.0),
+                  child: Row(
                     children: <Widget>[
-
-                      Image(
-                        image: NetworkImage('https://www.publimark.cl/media/k2/items/cache/22c02097e4438bd2f2f3fe4a6a3ab0e1_XL.jpg'),
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.grey.withOpacity(0.4),
                       ),
+                      SizedBox(width: 2.0),
+                      Text(
+                        likes.toString(),
+                        style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 12.0,
+                      color: Colors.grey
+                    ),
+                      ),
+                      SizedBox(width: 10.0),
+                      Icon(
+                        Icons.chat_bubble,
+                        color: Colors.grey.withOpacity(0.4),
+                        
+                      ),
+                      SizedBox(width: 2.0),
+                      Text(
+                        commentCount.toString(),
+                        style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 12.0,
+                      color: Colors.grey
+                    ),
+                      )
                     ],
                   ),
+                )
+              ],
+            ),
+            Positioned(
+              left: 110.0,
+              top: 102.0,
+              child: Container(
+                height: 40.0,
+                width: 40.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Colors.amber
+                ),
+                child: Center(
+                  child: Icon(Icons.shopping_cart, color: Colors.white),
                 ),
               ),
-            ),
-          ]
-        )
-      ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
