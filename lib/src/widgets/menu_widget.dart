@@ -44,6 +44,9 @@ class MenuWidget extends StatelessWidget {
             leading: Icon( Icons.home, color: Colors.blue ),
             title: Text('Datos del perfil'),
             trailing: Icon(Icons.arrow_right),
+            onTap: (){
+              
+            },
           ),
           ListTile(
             leading: Icon( Icons.history, color: Colors.blue ),
