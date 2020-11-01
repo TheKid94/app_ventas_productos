@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
       key: scaffoldkey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Ventas de productos',
+        title: Text('Compra de productos',
           style: TextStyle(
             color: Colors.black
           )
