@@ -1,3 +1,4 @@
+import 'package:app_ventas/src/pages/catalogo_page.dart';
 import 'package:app_ventas/src/pages/inicio_page.dart';
 import 'package:app_ventas/src/pages/soporte_page.dart';
 import 'package:app_ventas/src/widgets/menu_widget.dart';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
       key: scaffoldkey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Ventas de productos',
+        title: Text('Compra de productos',
           style: TextStyle(
             color: Colors.black
           )
@@ -53,6 +54,7 @@ class _HomePageState extends State<HomePage> {
 
     switch( paginaActual ){
       case 0: return InicioPage();
+      case 1: return CatalogoPage();
       case 2: return SoportePage();
       default:
         return InicioPage();
@@ -93,7 +95,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag),
-            label: 'Descuento'
+            label: 'Catalogo'
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.build_circle_outlined),
